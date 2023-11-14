@@ -1,0 +1,55 @@
+.home{
+    position: relative;
+    display: flex;
+}
+.home-wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px 0px 20px;
+}
+.isSide-btn-close{
+    z-index: 100;
+    position: absolute;
+    top: 78px;
+    left: 305px;
+    width: 50px;
+}
+.isSide-btn-open{
+    z-index: 100;
+    position: absolute;
+    width: 50px;
+    left: 10px;
+    top: 78px;
+}
+.card-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-around;*/
+}
+.card-wrap a{
+    text-decoration: none;
+}
+.card{
+    margin: auto 20px 20px auto;
+    width: 20vw;
+    max-width: 350px;
+    min-height: 330px;
+    height: 330px;
+    max-height: 330px;
+    overflow: hidden;
+}
+.card-detail{
+
+}
+card-author{
+
+}
+.check-watched{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+

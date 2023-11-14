@@ -1,0 +1,14 @@
+.video{
+    width: 100%;
+}
+.video-wrap{
+    display: flex;
+    flex-direction: column;
+}
+.video-youtube{
+}
+.video-accordion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

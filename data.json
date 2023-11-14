@@ -1,0 +1,34 @@
+{
+  "task": [
+    {
+      "id": 1179,
+      "name": "백엔드 공부하기",
+      "progress": 25,
+      "detail": "task에 대한 상세 설명"
+    },
+    {
+      "id": 1174,
+      "name": "데브옵스 공부하기",
+      "progress": 50,
+      "detail": "task에 대한 상세 설명"
+    },
+    {
+      "id": 3018,
+      "name": "데이터 베이스 공부하기",
+      "progress": 75,
+      "detail": "task에 대한 상세 설명"
+    },
+    {
+      "id": 1523,
+      "name": "flutter 공부하기",
+      "progress": 100,
+      "detail": "task에 대한 상세 설명"
+    },
+    {
+      "id": 1823,
+      "name": "springboot 공부하기",
+      "progress": 80,
+      "detail": "task에 대한 상세 설명"
+    }
+  ]
+}
