@@ -1,0 +1,43 @@
+.v-card{}
+.v-card a{
+    text-decoration: none;
+    color: black;
+
+}
+.video-card {
+    width: 330px;
+    height: 350px;
+    margin-right: 10px;
+}
+.video-card-wrap {
+    display: flex;
+    flex-direction: column;
+    /*background-color: burlywood;*/
+}
+.video-card-wrap-img {
+    width: 330px;
+    height: 270px;
+    object-fit: contain;
+}
+.video-card-wrap-detail{
+}
+.green-text{
+    color: #0f6a08;
+    font-family: "BM Jua";
+    font-size: 20px;
+}
+
+.video-card-wrap-detail-text{
+    font-family: "BM Jua";
+    font-size: 20px;
+    color: #002855;
+}
+/*.video-card-wrap-detail > span{*/
+/*    font-family: "BM Jua";*/
+/*    font-size: 20px;*/
+/*    color: #002855;*/
+/*}*/
+.video-card-wrap-detail > div{
+    font-size: 16px;
+    color: #002855;
+}

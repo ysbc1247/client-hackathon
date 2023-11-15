@@ -1,32 +1,41 @@
-import React, { useState } from "react";
-import style from "./Navbar.css";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import "../Navbar/Navbar.css";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "./hackerlog.png";
+
 export default function Navbar(props) {
-  const [isSidebar, setIsSidebar] = useState(true);
-  const handlerSidebar = () => {
-    setIsSidebar(!isSidebar);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if the user is already logged in
+    const token = localStorage.getItem('accessToken');
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const navigateToLogin = () => {
+    navigate('/login');
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    setIsLoggedIn(false);
+    navigate('/login'); // Redirect to home or login page after logout
+  };
+
   return (
-    <div className="navbar">
-      <h1>
-        <Link className="App-logo" to="/1">
-          KHU-DEMY
-        </Link>
-      </h1>
-      <div>
-        {/*<input*/}
-        {/*  type="checkbox"*/}
-        {/*  className={style.checkbox}*/}
-        {/*  id="checkbox"*/}
-        {/*  style={{ transition: "all 200ms" }}*/}
-        {/*  onChange={props.switchTheme}*/}
-        {/*/>*/}
-        {/*<label for="checkbox" class="label">*/}
-        {/*  <i className="fas fa-moon fa-sm"></i>*/}
-        {/*  <i className="fas fa-sun fa-sm"></i>*/}
-        {/*  <div className="ball" />*/}
-        {/*</label>*/}
+    <div className="navbar-header">
+      <div className="navbar-content">
+        <div className="navbar-w">
+          <img className="navbar-w-logo" src={logo} alt="logo" />
+        </div>
       </div>
+      {isLoggedIn ? (
+        <button className="login-button" onClick={handleLogout}>Logout</button>
+      ) : (
+        <button className="login-button" onClick={navigateToLogin}>Login</button>
+      )}
     </div>
   );
 }

@@ -1,16 +1,17 @@
 
-/*.App {*/
-/*  position: relative;*/
-/*  display: flex;*/
-/*  flex-direction: row;*/
-/*}*/
+.App {
+  /*position: relative;*/
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*background-color: black;*/
+}
 
 /*.App-container {*/
 
 /*}*/
-.sidebar-open .App-container {
+.sidebar-open .App-container{
   margin-left: 250px; /* 원하는 만큼의 마진을 설정하세요 */
-  transition: margin-left 0.3s; /* 부드러운 애니메이션을 위해 트랜지션을 추가할 수 있습니다 */
+  transition: margin-left 0.4s; /* 부드러운 애니메이션을 위해 트랜지션을 추가할 수 있습니다 */
 }
 
 .sidebar-closed .App-container {

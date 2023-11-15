@@ -1,8 +1,8 @@
 .sidebar{
     z-index: 100;
-    position:absolute;
+    position:fixed;
     width: 300px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 20px 0px 10px;
     min-height: 100vh;
     left: 0px;
     flex: 1;
@@ -13,20 +13,32 @@
     text-decoration: none;
 }
 .sidebar-header{
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+}
+.sidebar-name{
+    font-family: "BM Jua";
 }
 .sidebar-add-btn{
     position:absolute;
     top: 10px;
-    right: 10px;
-    width: 50px;
 }
-
+.sidebar-add-btn-btn{
+    width: 270px;
+}
+.sidebar-add-btn-btn-plus{
+    font-family: "BM Jua";
+    font-size: 20px;
+}
 .sidebar-title{
     width: 100%;
 }
 .sidebar-title>div{
     margin-bottom: 3px;
+}
+.sidebar-description{
+    font-size: 12px;
+    font-family: "BM Jua";
+    margin-top: 4px;
 }
 .sidebar-progress{
     min-width: 210px;

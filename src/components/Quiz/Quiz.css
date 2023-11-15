@@ -29,6 +29,10 @@
     margin-top: 20px;
 
 }
+.quiz-question-text{
+    font-size: 20px;
+    font-family: "BM Jua";
+}
 .quiz-question-btn{
     display: flex;
     flex-direction: row;
@@ -39,19 +43,24 @@
     font-size: 200px;
     font-weight: 700;
     font-family: "BM Jua";
-    color: green;
+    color: #0f6a08;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 .quiz-question-btn-o:hover{
     transform: scale(1.06);
-    color: forestgreen;
+    color: #008000;
+    transition-delay: 0.1s;
 }
+
 .quiz-question-btn-x{
     font-size: 200px;
     font-weight: 700;
     font-family: "BM Jua";
-    color: red;
+    color: #ea0000;
+    transition: transform 0.2s ease, color 0.2s ease;
  }
 .quiz-question-btn-x:hover{
-    transform: scale(1.06);
-    color: darkred;
+    transform: scale(1.08);
+    color: #f40000;
+    transition-delay: 0.1s;
 }

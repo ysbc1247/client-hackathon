@@ -8,9 +8,12 @@ import Video from "./Views/Video";
 import Task from "./Views/Task";
 import { getTask } from "./api";
 import Add from "./Views/Add";
+import Login from "./Views/Login";
+import Signup from "./Views/Signup";
 import { FaBeer } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+
 import "./App.css"; // 새로운 CSS 파일을 import
 
 function App() {
@@ -24,7 +27,6 @@ function App() {
   return (
     <div className={`App ${isSidebar ? "sidebar-open" : "sidebar-closed"}`}>
       <div>
-        <Navbar isSidebar={isSidebar} />
         {isSidebar ? (
           <>
             {/*{memoizedSidebar}*/}
@@ -38,20 +40,25 @@ function App() {
             </Button>
           </>
         ) : (
-          <Button
-            variant="warning"
-            className="isSide-btn-open"
-            onClick={handlerSidebar}
-          >
-            <GiHamburgerMenu />
-          </Button>
+          <>
+            <Button
+              variant="warning"
+              className="isSide-btn-open"
+              onClick={handlerSidebar}
+            >
+              <GiHamburgerMenu />
+            </Button>
+          </>
         )}
       </div>
       <div className="App-container">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/add" element={<Add />} />
           <Route path="/:listId" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route
             path="/:listId/:videoId/video/:id/:index"
             element={<Video />}

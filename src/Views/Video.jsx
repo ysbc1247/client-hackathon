@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import QuizAccordion from "../components/Quiz/QuizAccordion";
+import Button from "react-bootstrap/Button";
 import "../styles/Video.css";
+import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
 export default function Video() {
   const { listId, videoId } = useParams();
   const { id } = useParams();
@@ -17,7 +20,7 @@ export default function Video() {
             videoId={id} //동영상 주소
             opts={{
               width: "100%",
-              height: "500px",
+              height: "550px",
               playerVars: {
                 autoplay: 1, //자동 재생 여부
                 modestbranding: 1, //컨트롤 바에 유튜브 로고 표시 여부
@@ -28,7 +31,16 @@ export default function Video() {
               e.target.mute(); //소리 끔
             }}
           />
-          <span>next</span>
+        </div>
+        <div className="video-move-to-wrap">
+          <div className="video-move-to">
+            <Button variant="secondary">
+              <FaArrowLeft />
+            </Button>
+            <Button variant="secondary">
+              <FaArrowRight />
+            </Button>
+          </div>
         </div>
         <div className="video-accordion">
           <QuizAccordion videoId={videoId} />

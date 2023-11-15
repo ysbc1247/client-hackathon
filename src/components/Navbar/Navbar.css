@@ -1,61 +1,36 @@
-.navbar {
+.navbar-header {
   padding-inline: 2rem;
   border-bottom: 1px solid #ccc;
   height: 70px;
   position: relative;
-  /*max-height: 50px;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: aliceblue;
-  color:#9d2235;
+  color: #9d2235;
 }
-.App-logo{
-  text-decoration: none;
-  color:#9d2235;
+
+.navbar-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; 
 }
-/*.checkbox {*/
-/*  opacity: 0;*/
-/*  position: absolute;*/
-/*}*/
-/*.dark {*/
-/*  background-color: #292c35;*/
-/*}*/
-/*.label {*/
-/*  width: 36px;*/
-/*  height: 11px !important;*/
-/*  background-color: #111;*/
-/*  display: flex;*/
-/*  border-radius: 40px;*/
-/*  align-items: center;*/
-/*  justify-content: space-between;*/
-/*  padding: 5px;*/
-/*  position: relative;*/
-/*  transform: scale(1.5);*/
-/*}*/
 
-/*.ball {*/
-/*  width: 16px;*/
-/*  height: 16px;*/
-/*  background-color: white;*/
-/*  position: absolute;*/
-/*  top: 2px;*/
-/*  left: 2px;*/
-/*  border-radius: 50%;*/
-/*  transition: transform 0.2s linear;*/
-/*}*/
+.navbar-w-logo {
+  height: 70px;
+  object-fit: contain;
+}
 
-/*!*  target the elemenent after the label*!*/
-/*.checkbox:checked + .label .ball {*/
-/*  transform: translateX(24px);*/
-/*}*/
+.login-button {
+  padding: 10px 20px;
+  background-color: #9d2235;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-/*.fa-moon {*/
-/*  color: pink;*/
-/*}*/
-
-/*.fa-sun {*/
-/*  color: yellow;*/
-/*}*/
-
-
+.login-button:hover {
+  background-color: #872032;
+}

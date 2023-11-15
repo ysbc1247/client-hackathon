@@ -1,6 +1,7 @@
 import "../styles/Home.css";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import React, { useEffect, useState } from "react";
 import { videoList } from "../api";
 import Youtube from "../components/Youtube/Youtube";
 
@@ -11,7 +12,13 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${videoList}/${listId}`).then(
+        const token = localStorage.getItem('accessToken');
+        console.log(token);
+        const response = await fetch(`${videoList}/${listId}`,{
+          headers: {
+            'Authorization': `${token}`
+          }
+        }).then(
           (response) => response.json(),
         );
         setVideoListData(response.data.userTodoVideos);
@@ -24,19 +31,25 @@ export default function Home() {
 
   return (
     <div className="home">
+      <div>
+        <Link to={"/task/" + listId}>
+          <div className="navbar-to-kanban">
+            <Button>KANBAN BOARD</Button>
+          </div>
+        </Link>
+      </div>
       <div className="home-wrap">
-        <div className="card-wrap">
-          {videoListData.map((video, index) => (
-            <div key={index}>
-              <Youtube
-                key={index}
-                videoId={videoListData[index].videoId}
-                listId={listId}
-                isdex={index}
-              />
-            </div>
-          ))}
-        </div>
+        {videoListData.map((video, index) => (
+          <div key={index}>
+            <Youtube
+              key={index}
+              videoId={videoListData[index].videoId}
+              listId={listId}
+              isdex={index}
+              stage={videoListData[index].stage}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

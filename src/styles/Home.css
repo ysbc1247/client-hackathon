@@ -1,55 +1,67 @@
 .home{
     position: relative;
     display: flex;
+    overflow: hidden;
+    overflow-y: auto;
 }
 .home-wrap{
-    width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 50px 20px 0px 20px;
+    justify-content: center;
+    padding: 60px 0px 0px 0px;
+    overflow: hidden;
 }
 .isSide-btn-close{
     z-index: 100;
     position: absolute;
-    top: 78px;
+    top: 10px;
     left: 305px;
     width: 50px;
+    height: 44px;
 }
 .isSide-btn-open{
     z-index: 100;
     position: absolute;
+    top: 10px;
     width: 50px;
     left: 10px;
-    top: 78px;
+    height: 44px;
 }
-.card-wrap{
-    display: flex;
-    flex-wrap: wrap;
-    /*justify-content: space-around;*/
+.navbar-to-kanban{
+    
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: auto;
 }
-.card-wrap a{
-    text-decoration: none;
-}
-.card{
-    margin: auto 20px 20px auto;
-    width: 20vw;
-    max-width: 350px;
-    min-height: 330px;
-    height: 330px;
-    max-height: 330px;
-    overflow: hidden;
-}
-.card-detail{
 
-}
-card-author{
 
-}
-.check-watched{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
+/*.card-wrap{*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    !*justify-content: space-around;*!*/
+/*}*/
+/*.card-wrap a{*/
+/*    text-decoration: none;*/
+/*}*/
+/*.card{*/
+/*    margin: auto 20px 20px auto;*/
+/*    width: 20vw;*/
+/*    max-width: 350px;*/
+/*    min-height: 330px;*/
+/*    height: 330px;*/
+/*    max-height: 330px;*/
+/*    overflow: hidden;*/
+/*}*/
+/*.card-detail{*/
+/*}*/
+/*card-author{*/
+
+/*}*/
+/*.check-watched{*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    right: 10px;*/
+/*}*/
 

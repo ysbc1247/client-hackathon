@@ -1,18 +1,20 @@
 import "../Sidebar/Sidebar.css";
 import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { howProgress } from "../export";
 import { getTask } from "../../api";
+import { CgAdd, CgAddR } from "react-icons/cg";
 
 export default function Sidebar() {
   const [isTask, setIsTask] = useState([]);
-  const [isTaskid, setIsTaskid] = useState();
-  const [isTitle, setIsTitle] = useState("");
-  const [isProgress, setIsProgress] = useState();
-  const [isDetail, setIsDetail] = useState("");
+  // const [isTaskid, setIsTaskid] = useState();
+  // const [isTitle, setIsTitle] = useState("");
+  // const [isProgress, setIsProgress] = useState();
+  // const [isDetail, setIsDetail] = useState("");
   const [isAdding, setIsAdding] = useState(false); // Track if user is adding a new task
   const [newTask, setNewTask] = useState({
     name: "",
@@ -23,17 +25,22 @@ export default function Sidebar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(getTask).then((response) =>
-          response.json(),
-        );
-        console.log(response);
+        const token = localStorage.getItem('accessToken');
+        console.log(token);
+        const response = await fetch(getTask, {
+          headers: {
+            'Authorization': `${token}`
+          }
+        }).then(response => response.json());
         setIsTask(response.data);
+        console.log();
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
     fetchData();
-  });
+  }, []);
+  console.log(isTask);
   const handleAddClick = () => {
     setIsAdding(true);
   };
@@ -80,7 +87,9 @@ export default function Sidebar() {
         <div className="sidebar-header">
           <Link to="/add">
             <span className="sidebar-add-btn" onClick={handleAddClick}>
-              ADD
+              <Button variant="success" className="sidebar-add-btn-btn">
+                <span className="sidebar-add-btn-btn-plus">+</span>
+              </Button>
             </span>
           </Link>
         </div>
@@ -92,7 +101,7 @@ export default function Sidebar() {
                 className="d-flex justify-content-between align-items-start"
               >
                 <div className="ms-2 me-auto">
-                  <div className="fw-bold">{isTask[i].name}</div>
+                  <div className="fw-bold sidebar-name">{isTask[i].name}</div>
                   <div>
                     <ProgressBar
                       className="sidebar-progress"
@@ -101,7 +110,9 @@ export default function Sidebar() {
                       label={`${isTask[i].progress}%`}
                     />
                   </div>
-                  <div>{isTask[i].description}</div>
+                  <div className="sidebar-description">
+                    {isTask[i].description}
+                  </div>
                 </div>
                 <Badge bg="danger">x</Badge>
               </ListGroup.Item>

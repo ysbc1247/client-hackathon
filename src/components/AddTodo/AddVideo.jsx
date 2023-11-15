@@ -10,6 +10,13 @@ export default function AddVideo(props) {
   const [isTitle, setIsTitle] = useState();
   const [isCreator, setIsCreator] = useState();
   const src = " https://img.youtube.com/vi/" + isId + "/0.jpg ";
+  const truncateTitle = (title, maxLength) => {
+    if (title && title.length > maxLength) {
+      return title.substring(0, maxLength) + "...";
+    } else {
+      return title;
+    }
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,22 +40,11 @@ export default function AddVideo(props) {
         <div>
           <img className="video-card-wrap-img" src={src} />
         </div>
-        <div>
-          <div>{isTitle}</div>
+        <div className="video-card-wrap-detail">
+          <span>{truncateTitle(isTitle, 30)}</span>
           <div>{isCreator}</div>
         </div>
       </div>
-      {/*<Card className="card">*/}
-      {/*  <Card.Img variant="top" src={src} />*/}
-      {/*  <Card.Body>*/}
-      {/*    <Card.Title>{isTitle}</Card.Title>*/}
-      {/*    <Card.Text className="card-detail">{isCreator}</Card.Text>*/}
-      {/*    <Card.Footer className="card-author"></Card.Footer>*/}
-      {/*  </Card.Body>*/}
-      {/*  <label className="check-watched">*/}
-      {/*    <input type="checkbox" />*/}
-      {/*  </label>*/}
-      {/*</Card>*/}
     </div>
   );
 }
