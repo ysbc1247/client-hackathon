@@ -1,5 +1,5 @@
 // const BASEURL = "http://192.168.101.98:8080"; // 킨니
-export const BASEURL = "http://localhost:8080"; // 집
+export const BASEURL = "https://hacker-server-e8ff163aa991.herokuapp.com"; // 집
 export const getTask = BASEURL + "/user/list";
 export const videoList = BASEURL + "/user/list";
 export const videoInfo = BASEURL + "/video";
